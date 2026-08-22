@@ -1,0 +1,378 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "mode": "safeguard",
+        "reserveTokensFloor": 50000
+      },
+      "heartbeat": {
+        "activeHours": {
+          "end": "22:00",
+          "start": "08:00"
+        },
+        "every": "4h",
+        "model": "umodelverse/claude-sonnet-4-6"
+      },
+      "maxConcurrent": 4,
+      "model": {
+        "primary": "umodelverse/claude-sonnet-4-6"
+      },
+      "models": {
+        "umodelverse/claude-opus-4-8": {},
+        "umodelverse/claude-sonnet-4-6": {}
+      },
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "verboseDefault": "off",
+      "workspace": "C:\\openclaw\\workspace"
+    },
+    "list": [
+      {
+        "default": true,
+        "id": "main",
+        "identity": {
+          "emoji": "🤖",
+          "name": "大聪明",
+          "theme": "通用智能助手"
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "workspace": "D:\\Work\\openclaw-migration\\workspace"
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu"
+      }
+    }
+  ],
+  "browser": {
+    "defaultProfile": "openclaw",
+    "enabled": true,
+    "headless": false,
+    "noSandbox": true
+  },
+  "channels": {
+    "feishu": {
+      "allowFrom": [
+        "ou_cc077c7f01986af0a46233ff99d6d56c"
+      ],
+      "appId": "cli_aaf1497789b89cdc",
+      "appSecret": "jEGsMQ0lPj4EB6eGfQ2V9dcuMLhDNcYf",
+      "connectionMode": "websocket",
+      "dmPolicy": "allowlist",
+      "domain": "feishu",
+      "enabled": true,
+      "groupAllowFrom": [
+        "ou_cc077c7f01986af0a46233ff99d6d56c"
+      ],
+      "groupPolicy": "allowlist",
+      "groups": {
+        "*": {
+          "enabled": true
+        }
+      },
+      "requireMention": true,
+      "streaming": true
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "ownerDisplay": "raw",
+    "restart": true
+  },
+  "discovery": {
+    "mdns": {
+      "mode": "off"
+    }
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "69c86ab4384733fbf0bbb443084beae91ecfa0b31a1de0f2"
+    },
+    "bind": "loopback",
+    "mode": "local",
+    "port": 18789
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "models": {
+    "providers": {
+      "umodelverse": {
+        "api": "anthropic-messages",
+        "apiKey": "RTRuluWUO2iW6wi9Ff1cD643-4CeC-46Ef-a30F-F4549aE7",
+        "baseUrl": "https://api.modelverse.cn",
+        "models": [
+          {
+            "contextWindow": 200000,
+            "id": "claude-sonnet-4-6",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 65536,
+            "name": "claude-sonnet-4-6",
+            "reasoning": true
+          },
+          {
+            "contextWindow": 200000,
+            "id": "claude-opus-4-8",
+            "input": [
+              "text",
+              "image"
+            ],
+            "maxTokens": 65536,
+            "name": "claude-opus-4-8",
+            "reasoning": true
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "feishu",
+      "browser"
+    ],
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-account-channel-peer",
+    "maintenance": {
+      "maxDiskBytes": "5GB",
+      "mode": "enforce",
+      "resetArchiveRetention": "7d"
+    },
+    "resetByChannel": {
+      "feishu": {
+        "idleMinutes": 10080,
+        "mode": "idle"
+      }
+    }
+  },
+  "skills": {
+    "allowBundled": [
+      "canvas",
+      "clawhub",
+      "healthcheck",
+      "mcporter",
+      "nano-pdf",
+      "node-connect",
+      "session-logs",
+      "sherpa-onnx-tts",
+      "skill-creator",
+      "songsee",
+      "taskflow",
+      "taskflow-inbox-triage",
+      "weather"
+    ],
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "bluebubbles": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "feishu-task": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "notion": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-image-gen": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "tmux": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "video-frames": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    },
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "tools": {
+    "alsoAllow": [
+      "feishu_bitable_app",
+      "feishu_bitable_app_table",
+      "feishu_bitable_app_table_field",
+      "feishu_bitable_app_table_record",
+      "feishu_bitable_app_table_view",
+      "feishu_calendar_calendar",
+      "feishu_calendar_event",
+      "feishu_calendar_event_attendee",
+      "feishu_calendar_freebusy",
+      "feishu_chat",
+      "feishu_chat_members",
+      "feishu_create_doc",
+      "feishu_doc_comments",
+      "feishu_doc_media",
+      "feishu_drive_file",
+      "feishu_fetch_doc",
+      "feishu_get_user",
+      "feishu_im_bot_image",
+      "feishu_im_user_fetch_resource",
+      "feishu_im_user_get_messages",
+      "feishu_im_user_get_thread_messages",
+      "feishu_im_user_message",
+      "feishu_im_user_search_messages",
+      "feishu_oauth",
+      "feishu_oauth_batch_auth",
+      "feishu_search_doc_wiki",
+      "feishu_search_user",
+      "feishu_sheet",
+      "feishu_task_comment",
+      "feishu_task_subtask",
+      "feishu_task_task",
+      "feishu_task_tasklist",
+      "feishu_update_doc",
+      "feishu_wiki_space",
+      "feishu_wiki_space_node"
+    ],
+    "deny": [
+      "web_fetch",
+      "tts",
+      "agents_list",
+      "feishu_task_task",
+      "feishu_task_tasklist",
+      "feishu_task_comment",
+      "feishu_task_subtask",
+      "feishu_bitable_app_table_view",
+      "feishu_doc_comments",
+      "feishu_doc_media",
+      "feishu_drive_file",
+      "feishu_wiki_space",
+      "feishu_wiki_space_node",
+      "feishu_sheet"
+    ],
+    "profile": "full",
+    "sessions": {
+      "visibility": "all"
+    },
+    "web": {}
+  },
+  "update": {
+    "checkOnStart": false
+  }
+}
